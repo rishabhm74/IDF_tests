@@ -150,7 +150,7 @@ body{
 .about_under_line{
     width: 8%;
     height: 0.8vh;
-    background-color: #86ff70; /*f5da59*/ /*ffe97a*/
+    background-color: #88e453; /*f5da59*/ /*ffe97a*/
     border: none;
 }
 
@@ -918,16 +918,16 @@ body{
 .search_button{
     border: none;
     padding: 2vh 1.5vw;
-    background-color: #66AD57;
+    background-color: #79c24e;
     color: #ffffff;
     border-radius: 0rem 0.4rem 0.4rem 0rem;
-    border: 0.5px solid #58974b;
+    border: 0.5px solid #71b64a;
     border-left: none;
     transition: 0.3s;
     cursor: pointer;
 }
 .search_button:hover{
-    background-color: #6bc05c;
+    background-color: #82d154;
     padding: 2vh 1.5vw;
 }
 
@@ -1185,3 +1185,9 @@ body{
 
 
 
+
+
+*::selection{
+    background-color: rgb(150, 213, 49); /* 6deb56*/
+    color: #fff;
+}
