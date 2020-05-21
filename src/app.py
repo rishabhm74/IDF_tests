@@ -82,6 +82,51 @@ def allowed_file(filename):
 
 
 
+
+
+@app.before_first_request
+def load_all_data():
+    global data
+    data = pickle.load(open(r"DataBase/data_file.pkl", "rb"))
+    global titles
+    titles = pickle.load(open(r"DataBase/title_file.pkl", "rb"))
+    global auto_tag
+    auto_tag = pickle.load(open(r"DataBase/svos_file.pkl", "rb"))
+    global summary
+    summary = pickle.load(open(r"DataBase/summary_file.pkl", "rb"))
+
+    global data_for_tag 
+    data_for_tag = pickle.load(open(r"DataBase/tags_pickle.pkl", "rb"))
+    global data_for_text 
+    data_for_text = pickle.load(open(r"DataBase/corpus_file.pkl", "rb"))
+    global data_for_title 
+    data_for_title = pickle.load(open(r"DataBase/title_corpus.pkl", "rb"))
+
+    global document_file
+    document_file = pickle.load(open(r"DataBase/document_file.pkl", "rb"))
+
+    print("all data loaded...")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -131,12 +176,9 @@ def viewSearchbyTag(the_text):
     mystring = "Tag"
     query = the_text
 
-    data = pickle.load(open(r"DataBase/data_file.pkl", "rb"))
-    titles = pickle.load(open(r"DataBase/title_file.pkl", "rb"))
-    auto_tag = pickle.load(open(r"DataBase/svos_file.pkl", "rb"))
-    summary = pickle.load(open(r"DataBase/summary_file.pkl", "rb"))
+    
 
-    corpus = pickle.load(open(r"DataBase/tags_pickle.pkl", "rb"))
+    corpus = data_for_tag
     bm25 = search_by_BM25(corpus)
 
     tokenized_query, old_query, new_query = clean_query(query.lower())
@@ -167,7 +209,7 @@ def viewSearchbyTag(the_text):
 
     title_len = len(title)
 
-    document_file = pickle.load(open(r"DataBase/document_file.pkl", "rb"))
+    
     extension_list = []
     for i in indexes:
         extension_list.append(document_file[i]["extension"])
@@ -183,12 +225,7 @@ def viewSearchbyRelevance(the_text):
     mystring = "Relevance"
     query = the_text
 
-    data = pickle.load(open(r"DataBase/data_file.pkl", "rb"))
-    titles = pickle.load(open(r"DataBase/title_file.pkl", "rb"))
-    auto_tag = pickle.load(open(r"DataBase/svos_file.pkl", "rb"))
-    summary = pickle.load(open(r"DataBase/summary_file.pkl", "rb"))
-
-    corpus = pickle.load(open(r"DataBase/corpus_file.pkl", "rb"))
+    corpus = data_for_text
     bm25 = search_by_BM25(corpus)
 
     tokenized_query, old_query, new_query = clean_query(query.lower())
@@ -219,7 +256,7 @@ def viewSearchbyRelevance(the_text):
 
     title_len = len(title)
 
-    document_file = pickle.load(open(r"DataBase/document_file.pkl", "rb"))
+    
     extension_list = []
     for i in indexes:
         extension_list.append(document_file[i]["extension"])
@@ -233,12 +270,9 @@ def viewSearchbyRelevance(the_text):
 def viewSearchbyTitle(the_text):
     mystring = "Title"
     query = the_text
-    data = pickle.load(open(r"DataBase/data_file.pkl", "rb"))
-    titles = pickle.load(open(r"DataBase/title_file.pkl", "rb"))
-    auto_tag = pickle.load(open(r"DataBase/svos_file.pkl", "rb"))
-    summary = pickle.load(open(r"DataBase/summary_file.pkl", "rb"))
 
-    corpus = pickle.load(open(r"DataBase/title_corpus.pkl", "rb"))
+
+    corpus = data_for_title
     bm25 = search_by_BM25(corpus)
 
     tokenized_query, old_query, new_query = clean_query(query.lower())
@@ -270,7 +304,7 @@ def viewSearchbyTitle(the_text):
 
     title_len = len(title)
 
-    document_file = pickle.load(open(r"DataBase/document_file.pkl", "rb"))
+    
     extension_list = []
     for i in indexes:
         extension_list.append(document_file[i]["extension"])
@@ -376,6 +410,18 @@ def filenameonclick():
         else:
             mymessage = "Please enter the working directory for current session."
             return render_template('checkworking.html' , mymessage=mymessage)
+
+
+
+@app.route('/background_process_test', methods = ['POST', 'GET'])
+def background_process_test():
+    print("in thsi fun")
+    if request.method == 'POST':
+        print(request.form['test_input'])
+
+    print("hello")
+    return "nothing"
+
 
 
 if __name__ == '__main__':
