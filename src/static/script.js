@@ -38,7 +38,7 @@ function apply_filter(){
     
     var the_correct_placeholder;
     the_correct_placeholder = filter_type;
-    type1 = "Search by Text";
+    type1 = "Search by Relevance";
     type2 = "Search by Tag";
     type3 = "Search by Title";
 
