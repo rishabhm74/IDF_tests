@@ -16,7 +16,7 @@
 
     <div class="complete_body_overlay" id="complete_body_overlay"></div>
 
-    <div id="gif_holder_id" class="gif_holder_id" style="display: none;height: 100vh; background-color: #ffffff;">
+    <div id="gif_holder_id" class="gif_holder_id"  style="display: none;height: 100vh; background-color: #ffffff;">
         <div style="height: 40vh;"></div>
         <div class="outer_gif_container">
             <div class="gif_container">
@@ -180,8 +180,8 @@
 
                 <div class="available_filters_holder">
                     <p>Available Filters </p>
-                    
-                        <li class="filter_li"><button class="filter_button" onclick="select_this_type(this)">Search by Text</button></li>
+
+                        <li class="filter_li"><button class="filter_button" onclick="select_this_type(this)">Search by Relevance</button></li>
 
                         <li class="filter_li"><button class="filter_button" onclick="select_this_type(this)">Search by Tag</button></li>
 
@@ -209,7 +209,7 @@
 
         <div class="search_bar_outer">
             <div class="search_bar_holder">
-                <form action="/search" method="POST" class="search_form">
+                <form action="/search" target="_blank" method="POST" class="search_form">
 
                     <input type="text" name="search_bar" class="search_bar" id="search_bar" placeholder="Enter something to search...">
 
