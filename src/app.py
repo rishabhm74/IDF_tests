@@ -96,8 +96,8 @@ def search():
     if request.method == 'POST':
         entered_text = request.form['search_bar']
         applied_filter_type = request.form['filter_type_name_holder']
-        if applied_filter_type == "Search by Text":
-            return redirect(url_for('viewSearchbyText', the_text = entered_text))
+        if applied_filter_type == "Search by Relevance":
+            return redirect(url_for('viewSearchbyRelevance', the_text = entered_text))
         elif applied_filter_type == "Search by Tag":
             return redirect(url_for('viewSearchbyTag', the_text = entered_text))
         elif applied_filter_type == "Search by Title":
@@ -178,9 +178,9 @@ def viewSearchbyTag(the_text):
 
 
 
-@app.route('/searchByText/<the_text>')
-def viewSearchbyText(the_text):
-    mystring = "Text"
+@app.route('/searchByRelevance/<the_text>')
+def viewSearchbyRelevance(the_text):
+    mystring = "Relevance"
     query = the_text
 
     data = pickle.load(open(r"DataBase/data_file.pkl", "rb"))
