@@ -10,6 +10,11 @@ body{
 
 * {-webkit-font-smoothing: antialiased;} /* due to chrome font-rendering isues*/
 
+*::selection{
+    background-color: rgb(150, 213, 49); /* 6deb56*/
+    color: #fff;
+}
+
 
 /* front_body starts */
 .front_body{
@@ -1114,17 +1119,17 @@ body{
     border-radius: 4rem;
     font-size: 2.1vh;
     border: none;
-    background-color: #0066ff13;
-    color: #1f88ff;
+    background-color: #d3d3d32d;
+    color: #dddddd;
     font-weight: 400;
     transition: 0.3s;
-    border: 0.5px solid #639aff;
+    border: 0.5px solid #858585;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .filter_button:hover{
-    background-color: #002d7009;
-    color: #5297ff;
-    border: 0.5px solid #397eff;
+    background-color: #f7f7f713;
+    color: #e0e0e0;
+    border: 0.5px solid #aaaaaa;
     
 }
 .apply_filter_button{
@@ -1141,7 +1146,7 @@ body{
 }
 .apply_filter_button:hover,.apply_filter_button:focus{
     background-color: #3f3f3f;
-    color: #969696;
+    color: #cacaca;
     border: 1px solid #4d4d4d;
 }
 
@@ -1186,8 +1191,8 @@ body{
 
 
 
+/*
+.about_text_para::first-letter{
+    font-size: 7vh;
+}   */
 
-*::selection{
-    background-color: rgb(150, 213, 49); /* 6deb56*/
-    color: #fff;
-}
