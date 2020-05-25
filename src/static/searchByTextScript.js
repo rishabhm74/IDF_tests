@@ -1,6 +1,11 @@
 $(document).ready(function(){
   console.log("ready");
 
+  //console.log($('.just_the_outer').height());
+  let completeHeight = $('body').height();
+  console.group(completeHeight);
+  $('.show_similar_overlay').css({"height": completeHeight});
+
   $('.submitButton').on('click', function(){
     let mainText = $(this).parent().parent().parent().find("div:eq(0)").next();
     let mainHeading = mainText.find("div:eq(0)");
@@ -21,11 +26,23 @@ $(document).ready(function(){
       console.log("done");
     });
 
+    $('.show_similar_span').text(mainInputVal);
+    $('.show_similar_overlay').css({"display" : "block"});
+
   });
 
 });
 
 
+function open_overlay(){
+  document.getElementById('show_similar_overlay').style.display = "block";
+}
+
+
+
+function close_overlay(){
+  document.getElementById('show_similar_overlay').style.display = "none";
+}
 
 
 
@@ -41,57 +58,3 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-/*$(document).ready(function(){
-
-  $('.show_similar_button').on('click', function(e){
-    e.preventDefault();
-    let mainParent = $(this).parent().parent().parent(); //output
-    let mainText = mainParent.find("div:eq(2)");
-    let mainHeading = mainText.find("div:eq(0)");
-    let mainForm = mainHeading.find("form:eq(0)");
-    let mainClassButton = mainForm.find("button:eq(0)");
-    let mainTitle = mainClassButton.val();
-    let mainInput = mainForm.find("#the_similar_input");
-    console.log(mainInput);
-    //mainInput.val("this");
-    mainInput.val(mainTitle);
-    console.log(mainInput.val());
-    console.log(mainTitle);
-    
-    req = $.ajax({
-      url : '/theTest',
-      type : 'POST',
-
-    });
-
-    req.done(function(){
-      console.log("done");
-    });
-
-  });
-
-  console.log("it works");
-
-  $('.testButton').on('click', function(){
-
-    theTitle = $('.myclassname').val();
-    console.log(theTitle);
-    req = $.ajax({
-      url : '/theTest',
-      type : 'POST'
-
-    });
-
-    req.done(function(data){
-      console.log("its done!!")
-      //console.log(data.theList);
-      $('#thetestDiv').text(data.theList);
-    });
-
-  });
-
-*/
