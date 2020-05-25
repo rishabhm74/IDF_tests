@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{type}} search | Intelligent Document Finder</title>
     <link rel="stylesheet" href="{{ url_for('static' , filename = 'searchbyText.css')}}">
+
+
+
+
+
 </head>
 <body onload="seeif2()">
         <p class="upper_conatiner_p_top">
@@ -35,19 +40,16 @@
 
                             </div>
                         </div>
+
                         <div class="text">
                             <div class="heading" id="heading">
 
                                 <form action="/filenameonclick" , method="POST">
                                     <input type="text" onchange="seeif()"  name="file_head" class="thehiddenforminput"  id="thehiddenform">
-                                    <button type="submit" id="myclassnameid" name="myclassname" class="myclassname" value="{{ title[i] }}"><b>Title: </b>{{ title[i] }}</button>
+                                    <button type="submit" id="myclassnameid" name="myclassname" class="myclassname" value="{{ title[i] }}"><b>Title: </b><span>{{ title[i] }}</span></button>
                                 </form>
-
-
-
-
-
                             </div>
+
                             <div class="original_text">
                               <b style="font-size: 2.2vh">Text: </b>  {{ text[i] }}
                             </div>
@@ -65,14 +67,23 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="summary">
                             <p style="text-align:center; font-weight: 500; font-size: 2.3vh">Summary</p>
                             {{ summaries[i] }}
+
+                            <div class="show_similar_holder">
+                                <input type="text" id="theInput" class="theInput" name="theInput">
+                                <button type="submit" class="submitButton" id="submitButton">Show similar documents</button>
+                                
+                            </div>
+                            
                         </div>
+
                     </div>
 
                     
-                    <div class="show_similar_part"></div>
+                   
 
 
                 </div>
@@ -98,27 +109,41 @@
 -->
 
 
-
 <!-- footer ends -->
+
+
+
+
 </body>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename='searchByTextScript.js') }}"></script>
+
+
+
+
 <script>
+
     function title_fetcher(){
         var file_title = document.getElementById('heading_onclick').innerHTML;
-        console.log(file_title);
+        //console.log(file_title);
     }
 
 
 
     function seeif2(){
         let alldiv = document.getElementsByClassName('myclassname');
-        console.log(alldiv);
+        //console.log(alldiv);
         alldivlen = alldiv.length;
         for(var q = 0; q< alldivlen ; q++){
-            console.log(alldiv[q].innerHTML);
+            //console.log(alldiv[q].innerHTML);
         }
     }
 
 
     document.getElementById('myclassnameid').style.display = "";
+
 </script>
 </html>
