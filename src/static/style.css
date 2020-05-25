@@ -10,11 +10,6 @@ body{
 
 * {-webkit-font-smoothing: antialiased;} /* due to chrome font-rendering isues*/
 
-*::selection{
-    background-color: rgb(150, 213, 49); /* 6deb56*/
-    color: #fff;
-}
-
 
 /* front_body starts */
 .front_body{
@@ -26,6 +21,12 @@ body{
    
 }
 /* navbar_holder starts */
+.navbar_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .navbar_holder{
     background-color: #fdfdfd;  /*f3d537*/ /*fdfdfd*/
     height: 9vh;
@@ -1174,6 +1175,9 @@ body{
 }
 .selected_button{
     display: none;
+    background-color: #ddddddd8;
+    color: #202020;
+    border: 0.5px solid rgb(255, 255, 255);
 }
 
 .steps_img_container{
@@ -1196,3 +1200,7 @@ body{
     font-size: 7vh;
 }   */
 
+*::selection{
+    background-color: rgb(150, 213, 49); /* 6deb56*/
+    color: #fff;
+}
