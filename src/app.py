@@ -1,9 +1,11 @@
-from flask import Flask, flash, request, redirect, render_template, url_for
+from flask import Flask, flash, request, redirect, render_template, url_for, jsonify
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FileField
 import os
 import urllib.request
 import sqlite3
+
+import random
 
 from werkzeug.utils import secure_filename
 import re
@@ -413,15 +415,31 @@ def filenameonclick():
 
 
 
-@app.route('/background_process_test', methods = ['POST', 'GET'])
-def background_process_test():
-    print("in thsi fun")
-    if request.method == 'POST':
-        print(request.form['test_input'])
 
-    print("hello")
-    return "nothing"
 
+
+
+@app.route('/acceptTitle', methods = ['GET', 'POST'])
+def acceptTitle():
+    theMainInput = request.form['mainInputVal']
+    
+    print(theMainInput)
+    return jsonify({'returnData': theMainInput})
+
+
+
+
+"""
+@app.route('/theTest', methods = ['GET', 'POST'])
+def theTest():
+    theFinalTitle = request.form['theTitle']
+    print("the value" + theFinalTitle)
+    
+    return jsonify({'theFinally' : theFinalTitle})
+    #myList = [random.randint(1,100), random.randint(1,100), random.randint(1,100), random.randint(1,100)]
+    #return jsonify({'theNumber' : myNum})
+    #return jsonify({'theList' : myList})
+"""
 
 
 if __name__ == '__main__':
