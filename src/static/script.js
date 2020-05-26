@@ -1,17 +1,3 @@
-$(document).ready(function(){
-    
-    var scrollLink = $('.scroll');
-
-    scrollLink.click(function(e){
-        e.preventDefault();
-        //console.log("success");
-        $('body,html').animate({
-            scrollTop: $(this.hash).offset().top
-        }, 1000)
-    });
-
-
-});
 
 
 function show_filter_menu(){
@@ -117,3 +103,20 @@ function enableScroll() {
 
 
 
+$(document).ready(function(){
+    
+  var scrollLink = $('.scroll');
+
+  scrollLink.click(function(e){
+      e.preventDefault();
+      //console.log("success");
+      $('body,html').animate({
+          scrollTop: $(this.hash).offset().top
+      }, 1000)
+  });
+
+  let completeHeight = $('body').height();
+  //console.group(completeHeight);
+  $('.complete_body_overlay').css({"height": completeHeight});
+
+});
