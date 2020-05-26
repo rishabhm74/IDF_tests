@@ -8,7 +8,7 @@
     <link rel="icon" type="image/ico" href="{{url_for('static' , filename = 'icons/loupe.svg')}}">
     <link rel="stylesheet" href="{{ url_for('static' , filename = 'style.css') }}">
 
-
+    
     
 </head>
 
@@ -296,24 +296,50 @@
     
     <div class="space_bet_ban_name_logo"></div>
 
-    <!-- footer starts -->
-   <!--   <div class="footer">
-            <div class="footer_1">   </div>
-            <br>
-            <div class="footer_social_media"> 
+
+    </div>
+
+
+
+
+<!-- footer starts -->
+<div class="upper_arrow"></div>
+<div class="footer">
+        <div class="upper_footer">
+            <div class="left_part">
+                <div class="need_help">Need help with any of your projects</div>
+                
+                <div class="share_email"><input type="text" placeholder="Enter your email" type="email"> <button>Notify</button></div>
+            </div>
+            <div></div>
+            <div class="right_part">
                 <ul>
-                    <li><a href="#"><img src="{{url_for('static' , filename='icons/facebook (copy)2.svg')}}" alt="" srcset=""></a></li>
-                    <li><a href="#"><img src="{{url_for('static' , filename='icons/twitter (copy)2.svg')}}" alt="" srcset=""></a></li>
-                    <li><a href="#"><img src="{{url_for('static' , filename='icons/linkedin (copy)2.svg')}}" alt="" srcset=""></a></li>
-                    <li><a href="https://github.com/rishabhm74/infenionAIchallenge"><img src="{{url_for('static' , filename='icons/github-image (copy)2.svg')}}" alt="" srcset=""></a></li>
-                    
+                    <li>Share</li>
+                    <li><a href="#"><img src="{{ url_for('static', filename = 'icons/facebook3.svg') }}"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename = 'icons/twitter2.svg') }}"></a></li>
                 </ul>
             </div>
         </div>
-    -->
-    <!-- footer ends -->
+        <div class="lower_footer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</div>
 
-    </div>
+<!-- footer ends -->
+
+
+
+
+
+
+
+
+
 
 </body>
 
@@ -350,7 +376,7 @@
     var file_name;
     function runner(){
         var fileList = document.getElementById('file_drop').files;
-        if(fileList.length > 1){
+        if(0 > 1){
             alert("Not more than one file can be uploaded!!!");
         }else{
 
