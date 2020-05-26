@@ -1,3 +1,8 @@
+*::selection{
+    background-color: rgb(155, 218, 55); /* 6deb56*/
+    color: #fff;
+}
+
 body{
     height: auto;
     border: 0;
@@ -70,7 +75,7 @@ body{
     background-color: #f8f8f8;
     padding: 4vh 3vw;
     border-radius: 0.3rem;
-    border: 0.5px solid #e4e4e4;
+    border: 0.5px solid #ebebeb;
     display: grid;
     grid-template-columns: 5% 65% 30%;
     transition: 0.3s;
@@ -156,7 +161,7 @@ body{
 }
 .the_tag > li{
     list-style: none;
-    background-color: #b1f14a46;; /*fff388ad*/
+    background-color: #b1f14a33;; /*fff388ad*/
     padding: 1vh 2vh;
     margin-top: 0.5vh;
     margin-right: 0.5vw;
@@ -170,7 +175,7 @@ body{
 .the_tag > li:hover{
     border: 0.5px solid rgb(141, 201, 46);; /*f1df36*/
     background-color: rgb(163, 223, 68);; /*ffe25f*/
-    font-weight: 500;
+    font-weight: 300;
     color: #ffffff;
 }
 .the_tag{
@@ -253,20 +258,20 @@ body{
 .submitButton{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2vh;
-    background-color: #f8f8f8; /*acee42*/
-    padding: 1vh 2vw;
-    color: #92da20;
+    background-color: #eeffc8; /*acee42*/
+    padding: 1vh 2vh;
+    color: #616161;
     border: none;
     font-weight: 500;
     border-radius: 0.3rem;
-    border: 2px solid #ddffa5; /*9bd63b*/
+    border: 2px solid #d8ff9a; /*9bd63b*/
     transition: 0.3s;
 }
 .submitButton:hover{
     background-color: #a6e443;
     color: #ffffff;
     font-weight: 500;
-    border: 2px solid #99da31;;
+    border: 2px solid #9fe037;;
 }
 
 .show_similar_overlay{
@@ -302,12 +307,11 @@ body{
 }
 
 .button_holder{
-    display: flex;
-    justify-content: right;
-    align-items: center;
+    
 }
 
 .close_overlay_button{
+    float: right;
     height: 6vh;
     width: 6vh;
     text-align: center;
