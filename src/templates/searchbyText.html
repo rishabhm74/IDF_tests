@@ -104,32 +104,12 @@
 
 
 
-        <!-- footer starts -->
- <!--     <div class="footer">
-        <div class="footer_1">   </div>
-        <br>
-        <div class="footer_social_media"> 
-            <ul>
-                <li><a href="#"><img src="{{url_for('static' , filename='icons/facebook (copy)2.svg')}}" alt="" srcset=""></a></li>
-                <li><a href="#"><img src="{{url_for('static' , filename='icons/twitter (copy)2.svg')}}" alt="" srcset=""></a></li>
-                <li><a href="#"><img src="{{url_for('static' , filename='icons/linkedin (copy)2.svg')}}" alt="" srcset=""></a></li>
-                <li><a href="#"><img src="{{url_for('static' , filename='icons/github-image (copy)2.svg')}}" alt="" srcset=""></a></li>
-                
-            </ul>
-        </div>
-    </div>
-
--->
-
-
-<!-- footer ends -->
-
 <div class="show_similar_overlay" id="show_similar_overlay">
 
 
     <div class="close_overlay">
         <div class="title_holder">
-            Showing results similar to: <span id="show_similar_span" class="show_similar_span">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            Showing results similar to: <span id="show_similar_span" class="show_similar_span"></span>
         </div>
         <div class="button_holder">
             <button onclick="close_overlay()" class="close_overlay_button"><img class="close_overlay_icon" src="{{ url_for('static', filename='cross.svg') }}"></button>
@@ -197,6 +177,42 @@
         {% endfor %}
     </div>
 </div>
+
+
+
+
+
+<!-- footer starts -->
+<div class="upper_arrow"></div>
+<div class="footer">
+        <div class="upper_footer">
+            <div class="left_part">
+                <div class="need_help">Need help with any of your projects</div>
+                
+                <div class="share_email"><input type="text" placeholder="Enter your email" type="email"> <button>Notify</button></div>
+            </div>
+            <div></div>
+            <div class="right_part">
+                <ul>
+                    <li>Share</li>
+                    <li><a href="#"><img src="{{ url_for('static', filename = 'icons/facebook3.svg') }}"></a></li>
+                    <li><a href="#"><img src="{{ url_for('static', filename = 'icons/twitter2.svg') }}"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lower_footer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</div>
+
+<!-- footer ends -->
+
+
 
 
 </body>
