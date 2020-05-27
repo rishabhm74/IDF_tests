@@ -307,18 +307,25 @@
 <div class="footer">
         <div class="upper_footer">
             <div class="left_part">
-                <div class="need_help">Need help with any of your projects</div>
+                <div class="need_help">
+                    Have any suggestions, we would love to hear them
+                </div>
                 
-                <div class="share_email"><input type="text" placeholder="Enter your email" type="email"> <button>Notify</button></div>
+                <div class="share_email"><input type="text" placeholder="Enter your email" type="email"> <button type="submit">Notify</button></div>
             </div>
-            <div></div>
-            <div class="right_part">
-                <ul>
-                    <li>Share</li>
-                    <li><a href="#"><img src="{{ url_for('static', filename = 'icons/facebook3.svg') }}"></a></li>
-                    <li><a href="#"><img src="{{ url_for('static', filename = 'icons/twitter2.svg') }}"></a></li>
-                </ul>
+
+            <div class="right_part_outer">
+                <div class="right_part">
+                    <ul>
+                        <li>Share</li>
+                        <li><a href="#"><img src="{{ url_for('static', filename = 'icons/facebook3.svg') }}"></a></li>
+                        <li><a href="#"><img src="{{ url_for('static', filename = 'icons/twitter2.svg') }}"></a></li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        <div class="middle_footer">
+            Made with <span>&#9829;</span> by Sarthak & Rishabh
         </div>
         <div class="lower_footer">
             <div></div>
